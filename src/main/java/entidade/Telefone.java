@@ -26,8 +26,20 @@ public class Telefone {
 	private String tipo;
 
 	@ManyToOne
-	@JoinColumn(name = "EMAIL_USUARIO", referencedColumnName = "EMAIL", nullable = false)
+	@JoinColumn(name = "USUARIO_EMAIL", referencedColumnName = "EMAIL", nullable = false)
 	private Usuario usuario;
+
+	@Override
+	public boolean equals(Object obj) {
+
+		Telefone telefoneEntrada = (Telefone) obj;
+
+		if (this.numero.equalsIgnoreCase(telefoneEntrada.getNumero())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 	public int getId() {
 		return id;
@@ -67,18 +79,6 @@ public class Telefone {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-
-		Telefone telefoneEntrada = (Telefone) obj;
-
-		if (this.numero.equalsIgnoreCase(telefoneEntrada.getNumero())) {
-			return true;
-		} else {
-			return false;
-		}
 	}
 
 }

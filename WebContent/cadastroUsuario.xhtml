@@ -66,27 +66,15 @@
 								<p:column colspan="3">
 									<p:dataTable value="#{UsuarioBean.usuario.listaTelefones}" 
 										var="telefoneGrid">
-										<p:column headerText="DDD">
-											<h:outputText value="#{contatoGrid.ddd}"/>
-										</p:column>
 										<p:column headerText="Numero">
 											<h:outputText value="#{contatoGrid.numero}"/>
-										</p:column>
-										<p:column headerText="Tipo">
-											<h:outputText value="#{contatoGrid.tipo}"/>
 										</p:column>
 										<p:column>
 											<p:commandButton value="remover" update="@form" 
 												action="#{UsuarioBean.removerTelefone}">
 												<f:setPropertyActionListener
-													target="#{UsuarioBean.dddSel}" 
-													value="#{contatoGrid.ddd}" />
-												<f:setPropertyActionListener
 													target="#{UsuarioBean.numeroSel}" 
 													value="#{contatoGrid.numero}" />
-												<f:setPropertyActionListener
-													target="#{UsuarioBean.tipoSel}" 
-													value="#{contatoGrid.tipo}" />
 											</p:commandButton>
 										</p:column>
 									</p:dataTable>
