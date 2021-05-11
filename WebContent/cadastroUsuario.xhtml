@@ -67,14 +67,14 @@
 									<p:dataTable value="#{UsuarioBean.usuario.listaTelefones}" 
 										var="telefoneGrid">
 										<p:column headerText="Numero">
-											<h:outputText value="#{contatoGrid.numero}"/>
+											<h:outputText value="#{telefoneGrid.numero}"/>
 										</p:column>
 										<p:column>
 											<p:commandButton value="remover" update="@form" 
 												action="#{UsuarioBean.removerTelefone}">
 												<f:setPropertyActionListener
 													target="#{UsuarioBean.numeroSel}" 
-													value="#{contatoGrid.numero}" />
+													value="#{telefoneGrid.numero}" />
 											</p:commandButton>
 										</p:column>
 									</p:dataTable>
